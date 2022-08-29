@@ -1,10 +1,14 @@
 #!/usr/bin/python3
-def new_in_list(my_list, idx, element):
-    length = len(my_list)
+def no_c(my_string):
+    length = len(my_string)
 
-    new_list = my_list[:]
+    j = 0
 
-    if 0 <= idx < length:
-        new_list[idx] = element
+    new_string = my_string[:]
 
-    return (new_list)
+    for i in range(length):
+        if (my_string[i] == 'c' or my_string[i] == 'C'):
+            new_string = new_string[:(i - j)] + my_string[(i + 1):]
+            j += 1
+
+    return (new_string)
